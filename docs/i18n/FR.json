@@ -1,0 +1,21 @@
+{
+  "Add Row": "Ajouter Rangée",
+  "Change Language": "Selectionner Langue",
+  "Add Column": "Ajouter Colonne",
+  "Copy Row": "Cloner Rangée",
+  "Remove Row": "Supprimer Rangee",
+  "Remove Column": "Supprimer Colonne",
+  "Remove Control": "Supprimer Élément",
+  "Configure Control": "Configurer Élément",
+  "Text Input": "Saisie de Texte",
+  "Date Input": "Saisie de Date",
+  "Time Input": "Saisie de Temps",
+  "Range Input": "Entrée de Plage",
+  "Color Input": "Saisie de Couleur",
+  "Select": "Sélection",
+  "Radio Group": "Groupe Radio",
+  "Checkbox Group": "Groupe à Cocher",
+  "Paragraph": "Paragraphe",
+  "Header": "Entête",
+  "Help Text": "Texte d'aide"
+}

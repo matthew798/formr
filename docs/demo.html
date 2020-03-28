@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/formr-editor.css" />
+    <link rel="stylesheet" href="./css/formr-renderer.css" />
+    <style>
+        body{
+            width: 80%;
+            padding-top:15px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn{
+            margin: 10px 0 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="btn-group">
+    <button class="btn btn-primary" id="loadButton">Load Data</button>
+    <button class="btn btn-danger" id="clearButton">Clear</button>
+    <button class="btn btn-info" id="dataButton">Log Data</button>
+</div>
+
+<div id="editor"></div>
+<button class="btn btn-primary" style="width:100%" id="renderButton">Render</button>
+<div id="renderer"></div>
+<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=Element.prototype.classList%2CElement.prototype.closest%2CElement.prototype.dataset%2CCustomEvent"></script>
+<script src="./js/formr.bundle.js"></script>
+<script src="./js/plugins/formr.Translation.js"></script>
+
+<script>
+    const editor = new Formr.Editor(document.getElementById('editor'), {theme: {name: "bootstrap", prefix: "./theme/"}, plugins: [[FormrPlugins.TranslationPlugin, {defaultLanguage: "en", supportedLanguages: ["en", "fr", "zh"]}]]});
+    const renderer = new Formr.Renderer(document.getElementById('renderer'), {theme: {name: "bootstrap", prefix: "./theme/"}, plugins: [[FormrPlugins.TranslationPlugin, {defaultLanguage: "fr"}]]});
+
+    document.getElementById("renderButton").onclick = function(e) { renderer.loadData(editor.Data) };
+    document.getElementById("loadButton").onclick = function(e) { loadData(); };
+    document.getElementById("clearButton").onclick = function(e) { editor.clear() };
+    document.getElementById("dataButton").onclick = function(e) { console.log(JSON.stringify(editor.Data)) };
+
+    function loadData(){
+        editor.Data = ({"rows":[{"id":"pQCiwvcf","columns":[{"id":"ZZN6Q8qd","controls":[{"type":"header","id":"Zri3tohW","content":"Welcome to formr!"}]}]},{"id":"W0MRe1Ij","columns":[{"id":"LWPBUYlV","controls":[{"type":"paragraph","id":"l9JnNAPL","content":"Formr is a pure JS form editor and renderer! It allows users to create forms that translate, implement logic, self-validate and much more!"}]}]},{"id":"WeByUkOx","columns":[{"id":"L2nZQZKu","controls":[{"type":"text_input","id":"oyZwMeIs","label":{"content":"What is your name?"},"help":{"content":"Just your first name!"},"input":{"attrs":{"placeholder":""}}},{"type":"select","id":"MKyQ7Y13","label":{"content":"Is the cake a lie?"},"options":[{"label": "No", "selected":true},{"label":"Nope"}],"input":{"attrs": {"multiple": true}}, "help":{"content":"Help Text"},"multiple":true},{"type":"time_input","id":"JsQxTjew","label":{"content":"What time is it?"},"help":{"content":"This very second!!!"}}]},{"id":"UJfuxZVd","controls":[{"type":"color_input","id":"lMmYBhyn","label":{"content":"What is your favorite color?"},"help":{"content":"Black is not an option"}},{"type":"radio_group","id":"mtPaVhAr","label":{"content":"Video killed the radio star!"},"options":[{"label":"Who"},{"label":"What"},{"label":"Where"},{"label":"When"},{"label":"How"}],"help":{"content":"Help Text"}}]}]}]})
+    }
+</script>
+</body>
+</html>

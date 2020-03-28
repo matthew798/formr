@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns="http://www.w3.org/2000/svg"
+        id="SVGRoot"
+        version="1.1"
+        viewBox="0 0 20 20"
+        height="20px"
+        width="20px">
+  <defs
+          id="defs5069"/>
+  <metadata
+          id="metadata5072">
+    <rdf:RDF>
+      <cc:Work
+              rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+                rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+          id="layer1">
+    <path
+            id="path7091"
+            d="M 10 0 A 10 10 0 0 0 0 10 A 10 10 0 0 0 10 20 A 10 10 0 0 0 20 10 A 10 10 0 0 0 10 0 z M 9.5 1.7675781 L 9.5 18.232422 C 9.0689697 18.001936 8.4790662 17.615422 7.8613281 16.966797 C 6.6933323 15.740401 5.5 13.638889 5.5 10 C 5.5 6.3611111 6.6933323 4.2595987 7.8613281 3.0332031 C 8.4790662 2.3845781 9.0689697 1.9980636 9.5 1.7675781 z M 10.5 1.7675781 C 10.93103 1.9980636 11.520934 2.3845781 12.138672 3.0332031 C 13.306668 4.2595987 14.5 6.3611111 14.5 10 C 14.5 13.638889 13.306668 15.740401 12.138672 16.966797 C 11.520934 17.615422 10.93103 18.001936 10.5 18.232422 L 10.5 1.7675781 z M 7.6835938 1.8242188 C 7.5032978 1.9802532 7.3206636 2.1507055 7.1386719 2.3417969 C 5.8066677 3.7404013 4.5 6.1388889 4.5 10 C 4.5 13.861111 5.8066677 16.259599 7.1386719 17.658203 C 7.3177419 17.846227 7.498296 18.013907 7.6757812 18.167969 A 8.5 8.5 0 0 1 1.5 10 A 8.5 8.5 0 0 1 7.6835938 1.8242188 z M 12.324219 1.8320312 A 8.5 8.5 0 0 1 18.5 10 A 8.5 8.5 0 0 1 12.316406 18.175781 C 12.496702 18.019747 12.679336 17.849295 12.861328 17.658203 C 14.193332 16.259599 15.5 13.861111 15.5 10 C 15.5 6.1388889 14.193332 3.7404012 12.861328 2.3417969 C 12.682258 2.1537733 12.501704 1.9860925 12.324219 1.8320312 z "
+            style="fill-opacity:1"/>
+    <flowRoot
+            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.33333349px;line-height:1.25;font-family:'Noto Sans Elbasan';-inkscape-font-specification:'Noto Sans Elbasan';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+            id="flowRoot7139"
+            xml:space="preserve"><flowRegion
+   id="flowRegion7141"><rect
+     y="0"
+     x="0"
+     height="20"
+     width="20"
+     id="rect7143" /></flowRegion>
+      <flowPara
+              style="font-size:18.66666667px"
+              id="flowPara7145">A</flowPara></flowRoot>
+  </g>
+</svg>

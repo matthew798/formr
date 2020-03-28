@@ -1,0 +1,29 @@
+{
+  "formr-control": ["form-group"],
+  "formr-input": ["form-control"],
+  "formr-help": [
+    "form-text",
+    "text-muted"
+  ],
+  "formr-select": [
+    "form-control"
+  ],
+  "formr-radio-group": [
+    "form-check"
+  ],
+  "formr-radio": [
+    "form-check-input"
+  ],
+  "formr-radio-label": [
+    "form-check-label"
+  ],
+  "formr-checkbox-group": [
+    "form-check"
+  ],
+  "formr-checkbox": [
+    "form-check-input"
+  ],
+  "formr-checkbox-label": [
+    "form-check-label"
+  ]
+}

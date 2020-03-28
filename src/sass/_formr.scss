@@ -1,0 +1,37 @@
+%formr-row {
+  display: flex;
+  position: relative;
+  min-height: 40px;
+}
+
+%formr-column{
+  flex: 1 1 0px;
+  min-height: 60px;
+  padding: 5px;
+  position: relative;
+}
+
+%formr-control {
+  margin-bottom: 16px;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    display: block;
+    box-sizing: border-box;
+  }
+
+  small {
+    margin-bottom: .5rem;
+  }
+}
+
+

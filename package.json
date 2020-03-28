@@ -1,0 +1,56 @@
+{
+  "name": "formr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node tasks/build.js",
+    "watch": "node tasks/watch.js"
+  },
+  "keywords": [],
+  "author": "Matthew Goulart",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/events": "^3.0.0",
+    "@types/lodash": "^4.14.149",
+    "@types/node": "^13.9.1",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "cypress": "^4.2.0",
+    "eslint": "^6.8.0",
+    "fs-extra": "^8.1.0",
+    "lodash-webpack-plugin": "^0.11.5",
+    "node-sass": "^4.13.1",
+    "parallel-webpack": "^2.4.0",
+    "requirejs": "^2.3.6",
+    "source-map-loader": "^0.2.4",
+    "svg-sprite-loader": "^4.2.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@shopify/draggable": "^1.0.0-beta.8",
+    "choices.js": "^9.0.1",
+    "core-js": "^2.6.11",
+    "deep-object-diff": "^1.1.0",
+    "inversify": "^5.0.1",
+    "lodash": "^4.17.15",
+    "micromodal": "^0.4.2",
+    "reflect-metadata": "^0.1.13",
+    "regenerator-runtime": "^0.13.5",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "plugin:@typescript-eslint/recommended"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+@import "_formr.scss";
+
+.frenderer-row{
+  @extend %formr-row;
+
+  display: flex;
+}
+
+.frenderer-column{
+  @extend %formr-column;
+
+  flex: 1 1 100%;
+}
+
+.frenderer-control{
+  @extend %formr-control;
+}

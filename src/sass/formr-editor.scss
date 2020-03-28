@@ -1,0 +1,385 @@
+@import "_formr.scss";
+@import "_modal.scss";
+@import "../../node_modules/choices.js/src/styles/choices";
+@import "_choices.scss";
+
+%feditor-button {
+  height: 20px;
+  width: 20px;
+
+  position: relative;
+
+  svg {
+    fill: darkgray;
+
+    //This is required for IE11. www.stackoverflow.com/questions/30653533
+    use {
+      pointer-events: none;
+    }
+  }
+
+  &:hover svg {
+    fill: black;
+  }
+
+  &:active svg {
+    fill: darkgray !important;
+  }
+}
+
+.feditor-button-horizontal {
+  @extend %feditor-button;
+  display: inline-block;
+
+  margin: 5px 5px 5px 0;
+
+  &:first-child {
+    margin-left: 5px;
+  }
+
+  &:hover .feditor-button-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.2s visibility, 0.2s opacity;
+    top: 30px;
+  }
+}
+
+.feditor-button-vertical {
+  @extend %feditor-button;
+  display: block;
+  box-sizing: unset;
+
+  padding: 0 5px 5px 5px;
+
+  &:first-child {
+    margin-top: 5px;
+  }
+
+  svg use {
+    pointer-events: none;
+  }
+
+  .feditor-button-tooltip {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    left: 30px;
+  }
+
+  &:hover {
+    .feditor-button-tooltip, .feditor-button-submenu {
+      visibility: visible;
+      opacity: 1;
+      transition: 0.2s visibility, 0.2s opacity;
+    }
+  }
+}
+
+.feditor-button-tooltip, .feditor-button-submenu {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  white-space: nowrap;
+  box-sizing: border-box;
+  z-index: 999;
+
+  background: white;
+  box-shadow: 1px 1px 1px grey;
+  padding: 5px 2px 2px 2px;
+
+  border-radius: 5px;
+  border: 1px solid lightgray;
+
+  top: -4px;
+
+  transition: 0s visibility, 0.5s opacity;
+}
+
+.feditor-button-tooltip {
+  height: 28px;
+}
+
+.feditor-button-submenu {
+  border-radius: 5px;
+  left: 27px;
+}
+
+.drag {
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.feditor {
+  width: 100%;
+  position: relative;
+  display: flex;
+  min-height: 400px;
+  box-sizing: border-box;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.feditor-workspace{
+  min-height: 200px;
+
+  flex: 1 1 auto;
+}
+
+.feditor-workspace-buttons {
+  left: -26px;
+  top: 10px;
+  border: lightgrey solid 1px;
+  background-color: white;
+  border-radius: 3px;
+  position: sticky;
+  z-index: 999;
+}
+
+//Toolbox
+.feditor-toolbox-container {
+  position: sticky;
+  display: table;
+  top: 10px;
+  bottom: 10px;
+  height: 250px; /*TODO: Automate this in code, it wont expand or contract with different amounts of controls*/
+  width: 30px;
+}
+
+.feditor-toolbox{
+  width: 30px;
+  //position: absolute;
+  box-sizing: border-box;
+  right: 0;
+  top: 0;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0.3rem;
+  min-height:200px;
+  //max-height:400px;
+
+  overflow: hidden;
+
+  background-color: white;
+
+  -webkit-transition: width 1s;
+  -webkit-transition-delay: 2s;
+  transition: width 0.2s;
+  transition-delay: 2s;
+
+  &:hover{
+    width: 200px;
+    transition-delay: 0s;
+  }
+}
+
+.feditor-toolbox-item{
+  width: calc(100% - 25px);
+  height: 20px;
+  position: relative;
+  padding: 5px;
+  margin: 5px 5px 5px 30px;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+  white-space: nowrap;
+  overflow: hidden;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+
+  box-sizing: content-box;
+
+  cursor: grab;
+
+  &:active{
+    cursor: grabbing;
+  }
+
+  &:last-child{
+    margin-bottom: -1px;
+  }
+
+  svg{
+    margin-right: 10px;
+    flex: 0 0 auto;
+  }
+}
+
+.feditor-toolbox-handle{
+  width: 29px;
+  height: 100%;
+  position: absolute;
+  display: inline;
+  border-right: 1px solid rgba(0,0,0,.125);
+  margin-right: 5px;
+  background-color: whitesmoke;
+
+  svg {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    fill: darkgray;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+//Row
+.feditor-row{
+  @extend %formr-row;
+
+  border: lightgrey solid 1px;
+  margin: 0 5px -1px 5px;
+
+  &:hover{
+    border-color: darkgray;
+    box-shadow: 2px 2px lightgrey;
+  }
+
+  &:hover .feditor-row-buttons{
+    display: block;
+    border-color: darkgray;
+    box-shadow: 2px 2px lightgrey;
+  }
+
+  &:first-child{
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+
+  &:last-child{
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+}
+
+.feditor-row-buttons{
+  display: none;
+  background-color: white;
+  position: absolute;
+  left: 6px;
+  bottom: -26px;
+  border: lightgrey solid 1px;
+
+  border-top: none;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+
+  z-index: 1;
+
+  .feditor-button-horizontal {
+    margin-top: 0;
+  }
+}
+
+//Column
+.feditor-column{
+  @extend %formr-column;
+
+  background-repeat: no-repeat;
+  background-position: top;
+  border-right: lightgrey dashed 2px;
+
+  animation-name: col-fade;
+  animation-duration: 1s;
+
+  &:nth-child(2){
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+
+  &:last-child{
+    border: none;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+
+  &:not(:empty){
+    background-image: none;
+  }
+
+  &:hover .feditor-column-buttons {
+    display: block;
+    border-color: darkgray;
+  }
+}
+
+@keyframes col-fade {
+  from {background-color: lightgray;}
+  to {background-color: unset;}
+}
+
+.feditor-column-buttons {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 0;
+
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+
+  z-index: 1;
+
+  border: lightgrey solid 1px;
+  border-top: none;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.feditor-control{
+  @extend %formr-control;
+
+  label{
+    border-bottom: black dashed 1px;
+    min-width: 25px;
+    min-height: 25px;
+  }
+
+  small{
+    border-bottom: black dashed 1px;
+    display: inline !important;
+    min-width: 25px;
+    min-height: 20px;
+  }
+
+  p, h1, h2, h3, h4, h5, h6{
+    text-decoration:underline;
+    text-decoration-style: dashed;
+    text-decoration-color: grey;
+  }
+
+  &:hover .feditor-control-buttons{
+    display: block;
+  }
+}
+
+.feditor-control-buttons{
+  display: none;
+  position: absolute;
+
+  right: 0;
+}
+
+.tooltip[aria-hidden=false] {
+  opacity: 100;
+}
+
+.feditor-cfg-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+
+  label {
+    margin: 0.5em;
+    padding: .5em 1em .5em 0;
+    flex: 1;
+  }
+
+  input, div {
+    flex: 2;
+  }
+}
+
