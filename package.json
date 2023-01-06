@@ -26,7 +26,7 @@
     "parallel-webpack": "^2.4.0",
     "requirejs": "^2.3.6",
     "source-map-loader": "^0.2.4",
-    "svg-sprite-loader": "^4.2.1",
+    "svg-sprite-loader": "^6.0.11",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0",
